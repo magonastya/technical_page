@@ -1,0 +1,227 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./index.css">
+    <title>Nastya tab</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>
+            <h1>REACT</h1>
+        </header>
+        <ul id="nav-list">
+            <a href="#Basic usage" class="nav-link">
+                <li>Basic usage</li>
+            </a>
+            <a href="#Notable features" class="nav-link">
+                <li>Notable features</li>
+            </a>
+            <a href="#Common idioms" class="nav-link">
+                <li>Common idioms</li>
+            </a>
+            <a href="#Future development" class="nav-link">
+                <li>Future development</li>
+            </a>
+            <a href="#History" class="nav-link">
+                <li>History</li>
+            </a>
+
+        </ul>
+    </nav>
+
+    <main id="main-doc">
+        <section id="React" class="main-section">
+            <header>
+                <h2>What is React?!</h2>
+            </header>
+            <article>
+                <p>
+                    React (also known as React.js or ReactJS) is a JavaScript library for building
+                    user
+                    interfaces. It is maintained by Facebook and a community of individual
+                    developers
+                    and companies.
+                </p>
+                <p>React can be used as a base in the development of single-page or mobile
+                    applications,
+                    as it is optimal for fetching rapidly changing data that needs to be recorded.
+                    However, fetching data is only the beginning of what happens on a web page,
+                    which is
+                    why complex React applications usually require the use of additional libraries
+                    for
+                    state management, routing, and interaction with an API: Redux, React
+                    Router
+                    and axios are examples of such libraries.</p>
+            </article>
+        </section>
+
+        <section id="Basic usage" class="main-section">
+            <header>
+                <h2>Basic usage</h2>
+            </header>
+            <article>
+                <p>
+                    The Greeter class is a React component that accepts a property greeting. The
+                    ReactDOM.render method creates an instance of the Greeter component, sets the
+                    greeting property to 'Hello World' and inserts the rendered component as a child
+                    element to the DOM element with id myReactApp.
+
+                    When displayed in a web browser the result will be</p>
+                <blockquote>
+                    <pre>
+                                  <code>   
+                                        &lt;div id="myReactApp"&gt;
+                                        &lt;h1>Hello World!&lt;/h1&gt;
+                                                &lt;/div&gt;
+                                  </code>
+                                </pre>
+                </blockquote>
+            </article>
+        </section>
+
+        <section id="Notable features" class="main-section">
+            <header>
+                <h2>Notable features</h2>
+            </header>
+            <article>
+                <ul>
+                    <li><strong>Components</strong>
+                        <p> React code is made of entities called components. Components can be
+                            rendered to a particular element in the DOM using the React DOM library.
+                            When rendering a component, one can pass in values that are known as
+                            "props":
+                            <blockquote>
+                                <pre> <code> ReactDOM.render(
+                                <Greeter greeting="Hello World!" />,document.getElementById('myReactApp')); </code></pre>
+                            </blockquote>
+
+                            The two primary ways of declaring components in React is via
+                            functional
+                            components and class-based components. </p>
+                    </li>
+                    <li><strong>Functional components</strong>
+                        <p>Functional components are declared with a function that then returns some
+                            JSX. </p>
+                        <blockquote>
+                            <pre> <code>function Greeting(props) {
+                                            return &lt;div&gt;Hello, {props.name}!&lt;/div&gt;;} </code></pre>
+                        </blockquote>
+                    </li>
+                    <li><strong>Class-based components</strong>
+                        <p>Class-based components are declared using ES6 classes. They are also
+                            known as "stateful" components, because their state can hold values
+                            throughout the component and can be passed to child components through
+                            props: </p>
+                        <blockquote>
+                            <pre> <code> class ParentComponent extends React.Component {
+                                            state = { color: 'green' };
+                                            render() {
+                                              return (
+                                                &lt;ChildComponent color={this.state.color} /&gt; ); } </code></pre>
+                        </blockquote>
+                    </li>
+                    <li><strong>JSX</strong>
+                        <p>JSX, or JavaScript XML , is an extension to the JavaScript language
+                            syntax.Similar in appearance to HTML, JSX provides a way to
+                            structure component rendering using syntax familiar to many developers.
+                            React components are typically written using JSX, although they do not
+                            have to be (components may also be written in pure JavaScript). JSX is
+                            similar to another extension syntax created by Facebook for PHP called
+                            XHP.</p>
+                    </li>
+                    <li><strong>Nested elements</strong>
+                        <p>Multiple elements on the same level need to be wrapped in a single
+                            container element such as the &lt;div&gt; element shown above, or
+                            returned as
+                            an array. </p>
+                    </li>
+                    <li><strong>JavaScript expressions</strong>
+                        <p> JavaScript expressions (but not statements) can be used inside JSX with
+                            curly brackets {}: </p>
+                        <blockquote>
+                            <pre> <code> &lt;h1&gt;{10+1}/&lt;h1&gt; </code></pre>
+                        </blockquote>
+                        <p> The example above will render </p>
+                        <pre> <code> &lt;h1&gt;11/&lt;h1&gt; </code></pre>
+
+                    </li>
+                    <li><strong>React Hooks</strong>
+                        <p>Hooks are functions that let developers "hook into" React state and
+                            lifecycle features from function components. Hooks don’t work inside
+                            classes — they let you use React without classes.[21]
+
+                            React provides a few built-in Hooks like useState. You can also create
+                            your own Hooks to reuse stateful behavior between different components.
+                        </p>
+                    </li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="Common idioms" class="main-section">
+            <header>
+                <h2>Common idioms</h2>
+            </header>
+            <article>
+                <p>React does not attempt to provide a complete "application framework". It is
+                    designed specifically for building user interfaces and therefore does not
+                    include many of the tools some developers might consider necessary to build an
+                    application. This allows the choice of whichever libraries the developer prefers
+                    to accomplish tasks such as performing network access or local data storage.
+                    Common patterns of usage have emerged as the library matures. </p>
+                <p>A React component under the Flux architecture should not directly modify any
+                    props passed to it, but should be passed callback functions that create actions
+                    which are sent by the dispatcher to modify the store. The action is an object
+                    whose responsibility is to describe what has taken place: for example, an action
+                    describing one user "following" another might contain a user id, a target user
+                    id, and the type USER_FOLLOWED_ANOTHER_USER. The stores, which can be
+                    thought of as models, can alter themselves in response to actions received from
+                    the dispatcher. </p>
+                <p>This pattern is sometimes expressed as "properties flow down, actions flow up".
+                    Many implementations of Flux have been created since its inception, perhaps the
+                    most well-known being Redux, which features a single store, often called a
+                    single source of truth.</p>
+            </article>
+        </section>
+
+        <section id="Future development" class="main-section">
+            <header>
+                <h2>Future development</h2>
+            </header>
+            <article>
+                <p> Project status can be tracked via the core team discussion forum. However,
+                    major changes to React go through the Future of React repository issues and pull
+                    requests. This enables the React community to provide feedback on new
+                    potential features, experimental APIs and JavaScript syntax improvements. </p>
+            </article>
+        </section>
+
+        <section id="History" class="main-section">
+            <header>
+                <h2>History</h2>
+            </header>
+            <article>
+                <p>React was created by Jordan Walke, a software engineer at Facebook, who released
+                    an early prototype of React called "FaxJS". He was influenced by XHP, an
+                    HTML component framework for PHP. It was first deployed on Facebook's News Feed
+                    in 2011 and later on Instagram in 2012. It was open-sourced at JSConf US in
+                    May 2013.</p>
+                <p>React Native, which enables native Android, iOS, and UWP development with React,
+                    was announced at Facebook's React Conf in February 2015 and open-sourced in
+                    March 2015. </p>
+                <p>On April 18, 2017, Facebook announced React Fiber, a new core algorithm of React
+                    framework library for building user interfaces. React Fiber was to become
+                    the foundation of any future improvements and feature development of the React
+                    framework.</p>
+                <p>On September 26, 2017, React 16.0 was released to the public.</p>
+            </article>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+
+</html>
